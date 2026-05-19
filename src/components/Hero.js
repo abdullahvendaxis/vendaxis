@@ -111,7 +111,7 @@ export default function Hero() {
     wrap.addEventListener('mouseenter', () => { hover = true; });
     wrap.addEventListener('mouseleave', () => { hover = false; });
 
-    const LERP_SPEED = 0.025;
+    const LERP_SPEED = 0.09;
 
     let t = 0;
     const render = () => {
@@ -124,8 +124,8 @@ export default function Hero() {
         c.position.z += (target.z - c.position.z) * LERP_SPEED;
       });
 
-      group.rotation.y += hover ? 0.001 : 0.004;
-      group.rotation.z += hover ? 0.002 : 0;
+     group.rotation.y += hover ? 0.012 : 0.004;
+group.rotation.z += hover ? 0.008 : 0;
 
       renderer.render(scene, camera);
       requestAnimationFrame(render);
