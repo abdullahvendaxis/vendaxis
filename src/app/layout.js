@@ -49,7 +49,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "VendAxis",
+    title: "VendAxis — Digital studio crafting the future of business",
     description:
       "VendAxis is a digital studio engineering apps, websites, automations and brand systems",
     url: SITE_URL,
@@ -68,7 +68,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "VendAxis",
+    title: "VendAxis — Digital studio crafting the future of business",
     description:
       "VendAxis is a digital studio engineering apps, websites, automations and brand systems",
     images: ["/icon.png"],

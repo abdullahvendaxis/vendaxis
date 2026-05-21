@@ -84,13 +84,13 @@
   .nav-links a{font-size:14px;color:var(--ink);position:relative;padding:4px 0}
   .nav-links a:not(.nav-cta)::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .4s cubic-bezier(.2,.8,.2,1)}
   .nav-links a:not(.nav-cta):hover::after{width:100%}
-  .nav-cta{background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;font-size:13px;transition:all .4s;display:inline-flex;align-items:center;gap:10px}
+  .nav-cta{background:var(--ink);color:var(--bg)!important;padding:12px 22px;border-radius:999px;font-size:13px;transition:all .4s;display:inline-flex;align-items:center;gap:10px}
   .nav-cta:hover{background:var(--accent);color:var(--bg)}
-  .nav-cta .live{width:7px;height:7px;background:var(--accent-3);border-radius:50%;animation:pulse 1.6s ease-in-out infinite}
+  .nav-cta .live{width:7px;height:7px; background:var(--accent-3);border-radius:50%;animation:pulse 1.6s ease-in-out infinite}
   @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.6}}
-
+ 
   /* ============ HERO ============ */
-  .hero{min-height:100vh;padding:160px 32px 60px;position:relative;overflow:hidden}
+  .hero{min-height:100vh;padding:160px 32px 60px;align-items: center; position:relative;overflow:hidden}
   .hero-stage{position:relative;display:flex;align-items:center;justify-content:center;margin:20px 0}
   .hero-stage h1{text-align:center;position:relative;z-index:1}
   .orb-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(280px,34vw,520px);height:clamp(280px,34vw,520px);z-index:2;pointer-events:auto;cursor:crosshair}
@@ -130,7 +130,7 @@
   .btn-ghost:hover{background:var(--ink);color:var(--bg)}
 
   /* Scroll indicator */
-  .scroll-ind{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ink-dim);animation:bob 2.4s ease-in-out infinite}
+  .scroll-ind{text-align: center;position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ink-dim);animation:bob 2.4s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
 
   /* ============ MARQUEE ============ */
