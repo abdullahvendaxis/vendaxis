@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://yourdomain.com"; // replace with your real domain
+// IMPORTANT: no trailing slash
+const SITE_URL = "https://vendaxis.vercel.app";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -39,11 +40,13 @@ export const metadata = {
     "digital studio",
   ],
 
+  robots: {
+    index: true,
+    follow: true,
+  },
+
   icons: {
-    icon: [
-      { url: "/icon.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon.png", sizes: "192x192", type: "image/png" },
-    ],
+    icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
@@ -54,16 +57,16 @@ export const metadata = {
       "VendAxis is a digital studio engineering apps, websites, automations and brand systems",
     url: SITE_URL,
     siteName: "VendAxis",
+    type: "website",
+    locale: "en_US",
     images: [
       {
-        url: "/icon.png",
+        url: `${SITE_URL}/icon.png`,
         width: 1200,
         height: 630,
         alt: "VendAxis",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
 
   twitter: {
@@ -71,51 +74,24 @@ export const metadata = {
     title: "VendAxis — Digital studio crafting the future of business",
     description:
       "VendAxis is a digital studio engineering apps, websites, automations and brand systems",
-    images: ["/icon.png"],
-  },
-
-  robots: {
-    index: true,
-    follow: true,
+    images: [`${SITE_URL}/icon.png`],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-
-        {/* Favicon */}
-        <link rel="icon" href="/icon.png" sizes="any" />
+        {/* Favicon only */}
+        <link rel="icon" href="/icon.png" />
         <link rel="apple-touch-icon" href="/icon.png" />
-
-        {/* Extra OG Tags */}
-        <meta property="og:image" content={`${SITE_URL}/icon.png`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="VendAxis" />
-
-        {/* Twitter */}
-        <meta name="twitter:image" content={`${SITE_URL}/icon.png`} />
 
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         <link
           href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -125,11 +101,8 @@ export default function RootLayout({ children }) {
 
       <body>
         <Loader />
-
         <CustomCursor />
-
         <ClientScript />
-
         <SmoothScroll />
 
         <Script
